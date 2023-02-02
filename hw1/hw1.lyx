@@ -1,0 +1,616 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+soul
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3.5cm
+\rightmargin 3cm
+\bottommargin 3.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "~/.lyx/templates/math_shorthand.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Homework 1
+\end_layout
+
+\begin_layout Author
+Ziheng Chen (zc5282)
+\end_layout
+
+\begin_layout Subsection*
+Problem 1
+\end_layout
+
+\begin_layout Standard
+We plot a comparison between different CDFs in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p1-cdf"
+
+\end_inset
+
+.
+ Notice that the empirical distribution has a lot of discontinuites since
+ it is a linear combination of Heaviside functions.
+ The smoothed estimators mitigate this issue.
+ The scaling of 
+\begin_inset Formula $h=n^{-1/2}$
+\end_inset
+
+ follows the empirical estimator more quickly, while the scaling of 
+\begin_inset Formula $h=n^{-1/5}$
+\end_inset
+
+ changes more slowly since the kernel is more spread out.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob1.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A comparison between different CDFs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p1-cdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problem 2
+\end_layout
+
+\begin_layout Standard
+The estimated CDFs are shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p2-cdf"
+
+\end_inset
+
+.
+ Once again, the empirical CDFs (solid lines) are discontinuous and the
+ smoothened versions (dotted lines) help create a continuous approximation.
+ The scaling for the estimator reads 
+\begin_inset Formula $h=n^{-1/2}$
+\end_inset
+
+ in this case.
+ There are around 500 samples in this dataset, so using the full samples
+ yields a slightly accurate result than that with 100 random samples which
+ is a lot more accurate than the 10 sample version.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob2.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A comparison between different CDFs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p2-cdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problem 3
+\end_layout
+
+\begin_layout Standard
+We compare the first four classes of estimators in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prob3-density"
+
+\end_inset
+
+.
+ As the width parameter 
+\begin_inset Formula $h$
+\end_inset
+
+ gets smaller, the estimated density is more sensitive but is prone to noise
+ at the same time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob3-1.eps
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Uniform kernel 
+\begin_inset Formula $K\left(u\right)=\boldsymbol{1}_{\abs u\le0.5}$
+\end_inset
+
+ and 
+\begin_inset Formula $h=\lambda\widehat{\sigma}n^{-1/5}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob3-2.eps
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gaussian kernel and 
+\begin_inset Formula $h=\lambda\widehat{\sigma}n^{-1/5}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob3-3.eps
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Uniform kernel 
+\begin_inset Formula $K\left(u\right)=\frac{3}{4}\left(1-u^{2}\right)\boldsymbol{1}_{\abs u\le1}$
+\end_inset
+
+ and 
+\begin_inset Formula $h=\lambda\widehat{\sigma}n^{-1/5}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob3-4.eps
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gaussian kernel and 
+\begin_inset Formula $h=1.06\,\widehat{\sigma}n^{-r}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A comparison across different density estimators.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prob3-density"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The scaling parameter 
+\begin_inset Formula $h$
+\end_inset
+
+ can also be determined by a leave-one-out CV procedure.
+ Given an assumed 
+\begin_inset Formula $h$
+\end_inset
+
+, for each sample index 
+\begin_inset Formula $i$
+\end_inset
+
+, we consider the density estimate without using this sample
+\begin_inset Formula 
+\[
+\widehat{p}_{\overline{i}}\left(x\right):=\frac{1}{\left(N-1\right)h}\sum_{j\neq i}\phi\left(\frac{x-X_{j}}{h}\right).
+\]
+
+\end_inset
+
+Then, 
+\begin_inset Formula $\widehat{p}_{\overline{i}}\left(x_{i}\right)$
+\end_inset
+
+ represents the likelihood that the sample with index 
+\begin_inset Formula $i$
+\end_inset
+
+ occurs using the density estimate.
+ We would like to maximize 
+\begin_inset Formula $\prod_{i=1}^{N}\widehat{p}_{\overline{i}}\left(x_{i}\right)$
+\end_inset
+
+ for different choices of 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ It is, however, numerically unstable to compute the product of probabilities,
+ so we instead minimize the sum of negative log likelihood
+\begin_inset Formula 
+\[
+\widehat{L}:=\sum_{i=1}^{N}-\log\widehat{p}_{\overline{i}}\left(x_{i}\right).
+\]
+
+\end_inset
+
+This approach can be justified by arguing that it minizes the KL-divergence
+ to the true distribution 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ To see this, notice that 
+\begin_inset Formula $\bE\widehat{L}=\bE_{X\sim p}\left[-\log\widehat{p}_{\overline{i}}\left(X\right)\right]$
+\end_inset
+
+ while 
+\begin_inset Formula 
+\[
+\widehat{p}_{\overline{i}}\left(x\right)\to\bE_{\widetilde{X}\sim p}\frac{1}{h}\phi\left(\frac{x-\widetilde{X}}{h}\right)=:q\left(x;h\right)
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ but 
+\begin_inset Formula $h$
+\end_inset
+
+ fixed.
+ Then, we combine the two facts shown above
+\begin_inset Formula 
+\[
+\bE\widehat{L}=\bE_{X\sim p}\left[-\log q\left(X;h\right)\right]=\int-\log q\left(x;h\right)p\left(x\right)\d x=D_{\text{KL}}\left(p||q\left(\cdot;h\right)\right)+H\left(p\right).
+\]
+
+\end_inset
+
+Thus, minimizing 
+\begin_inset Formula $\widehat{L}$
+\end_inset
+
+ amounts to finding the best approximation of 
+\begin_inset Formula $p$
+\end_inset
+
+ among class 
+\begin_inset Formula $q\left(\cdot;h\right)$
+\end_inset
+
+.
+ The result is shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prob3-cv"
+
+\end_inset
+
+.
+ It seems that the optimal choice balances bias and variance compared to
+ the other two extreme cases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prob3-5.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The leave-one-out CV procedure and the resulting estimate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prob3-cv"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
