@@ -565,8 +565,12 @@ reference "fig:prob3-cv"
 \end_inset
 
 .
- It seems that the optimal choice balances bias and variance compared to
- the other two extreme cases.
+ We compare the optimal choice of 
+\begin_inset Formula $h$
+\end_inset
+
+ by the leave-one-out criterion and the 2-fold method.
+ It seems that the two fold method yields a less fluctuating estimator.
 \end_layout
 
 \begin_layout Standard
@@ -589,7 +593,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The leave-one-out CV procedure and the resulting estimate.
+The leave-one-out and two-fold CV procedure and the resulting estimate.
 \end_layout
 
 \end_inset
