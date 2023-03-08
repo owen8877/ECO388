@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from pandas import Series
 from sklearn.model_selection import KFold
 
-from lib.estimator import pdf_kernel_estimator, uniform_pdf, gaussian_pdf, epanechnikov_pdf
+from lib.estimator import pdf_kernel_estimator_1d, uniform_pdf, gaussian_pdf, epanechnikov_pdf
 
 mpl.use('TkAgg')
 
@@ -24,7 +24,7 @@ fig, _ = plt.subplots(figsize=(6, 3), dpi=148)
 zs = np.linspace(plot_bounds[0], plot_bounds[1], 1001)
 for l in np.arange(1, 6) * 0.5:
     h = l * sigma_hat * np.power(N, -1 / 5)
-    plt.plot(zs, pdf_kernel_estimator(zs, wage_samples, uniform_pdf, h), label=f'{l:.1f}')
+    plt.plot(zs, pdf_kernel_estimator_1d(zs, wage_samples, uniform_pdf, h), label=f'{l:.1f}')
 plt.gca().set(xlabel='wage', ylabel='CDF', xlim=plot_bounds)
 plt.legend(loc='best', title='$\lambda$')
 fig.savefig('prob3-1.eps')
@@ -33,7 +33,7 @@ fig.savefig('prob3-1.eps')
 fig, _ = plt.subplots(figsize=(6, 3), dpi=148)
 for l in np.arange(1, 6) * 0.5:
     h = l * sigma_hat * np.power(N, -1 / 5)
-    plt.plot(zs, pdf_kernel_estimator(zs, wage_samples, gaussian_pdf, h), label=f'{l:.1f}')
+    plt.plot(zs, pdf_kernel_estimator_1d(zs, wage_samples, gaussian_pdf, h), label=f'{l:.1f}')
 plt.gca().set(xlabel='wage', ylabel='CDF', xlim=plot_bounds)
 plt.legend(loc='best', title='$\lambda$')
 fig.savefig('prob3-2.eps')
@@ -42,7 +42,7 @@ fig.savefig('prob3-2.eps')
 fig, _ = plt.subplots(figsize=(6, 3), dpi=148)
 for l in np.arange(1, 6) * 0.5:
     h = l * sigma_hat * np.power(N, -1 / 5)
-    plt.plot(zs, pdf_kernel_estimator(zs, wage_samples, epanechnikov_pdf, h), label=f'{l:.1f}')
+    plt.plot(zs, pdf_kernel_estimator_1d(zs, wage_samples, epanechnikov_pdf, h), label=f'{l:.1f}')
 plt.gca().set(xlabel='wage', ylabel='CDF', xlim=plot_bounds)
 plt.legend(loc='best', title='$\lambda$')
 fig.savefig('prob3-3.eps')
@@ -51,7 +51,7 @@ fig.savefig('prob3-3.eps')
 fig, _ = plt.subplots(figsize=(6, 3), dpi=148)
 for ir in np.arange(2, 8):
     h = 1.06 * sigma_hat * np.power(N, -1 / ir)
-    plt.plot(zs, pdf_kernel_estimator(zs, wage_samples, gaussian_pdf, h), label=f'1/{ir:d}')
+    plt.plot(zs, pdf_kernel_estimator_1d(zs, wage_samples, gaussian_pdf, h), label=f'1/{ir:d}')
 plt.gca().set(xlabel='wage', ylabel='CDF', xlim=plot_bounds)
 plt.legend(loc='best', title='$r$')
 fig.savefig('prob3-4.eps')
@@ -98,9 +98,9 @@ ax_cv.scatter([h_best, h_best_2fold], [np.min(seq_nll), np.min(seq_nll_2fold)], 
 zs = np.linspace(plot_bounds[0], plot_bounds[1], 1001)
 # ax_compare.plot(zs, pdf_kernel_estimator(zs, wage_samples, gaussian_pdf, h=4e-2), label=f'{h_test_1:.1e}', alpha=0.5,
 #                 c=palette[2])
-ax_compare.plot(zs, pdf_kernel_estimator(zs, wage_samples, gaussian_pdf, h=h_best), label=f'{l_best:.1f} (loo best)',
+ax_compare.plot(zs, pdf_kernel_estimator_1d(zs, wage_samples, gaussian_pdf, h=h_best), label=f'{l_best:.1f} (loo best)',
                 c=palette[3])
-ax_compare.plot(zs, pdf_kernel_estimator(zs, wage_samples, gaussian_pdf, h=h_best_2fold),
+ax_compare.plot(zs, pdf_kernel_estimator_1d(zs, wage_samples, gaussian_pdf, h=h_best_2fold),
                 label=f'{l_best_2fold:.1f} (2 fold best)', c=palette[4])
 # ax_compare.plot(zs, pdf_kernel_estimator(zs, wage_samples, gaussian_pdf, h=3e0), label=f'{h_test_2:.1e}', alpha=0.5,
 # c=palette[5])

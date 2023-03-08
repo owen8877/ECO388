@@ -2,4 +2,5 @@
 *.eps
 *.DTA
 *~
+.ipynb
 \#*

@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
 
-from lib.estimator import gaussian_cdf, cdf_kernel_estimator
+from lib.estimator import gaussian_cdf, cdf_kernel_estimator_1d
 from lib.plot import plot_empirical_distribution
 
 mpl.use('TkAgg')
@@ -27,7 +27,7 @@ plot_empirical_distribution(samples, plot_bounds, plot_kws={'color': palette[1]}
 # Try different kernel estimators
 asymptotic_orders = 2, 5
 for i, order in enumerate(asymptotic_orders):
-    plt.plot(zs, cdf_kernel_estimator(zs, samples, gaussian_cdf, np.power(N, -1 / order)),
+    plt.plot(zs, cdf_kernel_estimator_1d(zs, samples, gaussian_cdf, np.power(N, -1 / order)),
              label=f'Smoothed (order={order})', c=palette[2 + i])
 
 plt.gca().set(xlabel='x', ylabel='CDF', xlim=plot_bounds)
