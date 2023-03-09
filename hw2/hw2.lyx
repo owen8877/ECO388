@@ -108,6 +108,24 @@ filename "~/.lyx/templates/math_shorthand.lyx"
 
 \begin_layout Title
 Homework 2
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The source code to this exercise can be found at 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/owen8877/ECO388/releases/tag/hw2"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
@@ -360,7 +378,7 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -431,6 +449,137 @@ female
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problem 2
+\end_layout
+
+\begin_layout Standard
+We repeat the same experiment but using a KNN estimator.
+ The number of neighbours is selected as 
+\begin_inset Formula $\left[\lambda\sqrt{N}\right]$
+\end_inset
+
+ for varying 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ values.
+ We list the results in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:knn"
+
+\end_inset
+
+ and it seems that the KNN approach can lead to better estimators in terms
+ of MISE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename plots/knn-educ-exper-female.pdf
+	width 48line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The optimal number of neighbours is 11.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename plots/knn-educ-tenure-profocc-female.pdf
+	width 48line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The optimal number of neighbours is 14.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:knn"
 
 \end_inset
 
