@@ -5,6 +5,23 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+% \usepackage{matlab-prettifier}
+\usepackage{lstautogobble}  % Fix relative indenting
+\usepackage{color}          % Code coloring
+% \usepackage{zi4}            % Nice font
+
+\definecolor{bluekeywords}{rgb}{0.13, 0.13, 1}
+\definecolor{greencomments}{rgb}{0, 0.5, 0}
+\definecolor{redstrings}{rgb}{0.9, 0, 0}
+\definecolor{graynumbers}{rgb}{0.5, 0.5, 0.5}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{1, 1, 1}
+\end_preamble
 \use_default_options true
 \begin_modules
 theorems-ams-chap-bytype
@@ -140,12 +157,12 @@ Problem 1
 The kernel regression is formulated in the following manner:
 \begin_inset Formula 
 \[
-\widehat{\phi}\left(z\right)=\frac{\sum_{i=1}^{N}Y_{i}K\left(\frac{z-Z_{i}}{h}\right)}{\sum_{i=1}^{N}K\left(\frac{z-Z_{i}}{h}\right)}
+\widehat{\phi}\left(z\right)=\frac{\sum_{i=1}^{N}Y_{i}K\left(\frac{z-Z_{i}}{h}\right)}{\sum_{i=1}^{N}K\left(\frac{z-Z_{i}}{h}\right)}.
 \]
 
 \end_inset
 
-where...
+
 \end_layout
 
 \begin_layout Standard
@@ -378,7 +395,7 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -460,6 +477,17 @@ name "fig:3"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "kernel_regression_estimator.py"
+lstparams "breaklines=true,captionpos=b,frame=tb,language=Python,backgroundcolor={\\color{backcolour}},commentstyle={\\color{codegreen}},keywordstyle={\\color{magenta}},numberstyle={\\tiny\\color{codegray}},stringstyle={\\color{codepurple}},basicstyle={\\ttfamily\\footnotesize},breakatwhitespace=false,breaklines=true,keepspaces=true,numbers=left,numbersep=5pt,showspaces=false,showstringspaces=false,showtabs=false,tabsize=2"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Problem 2
 \end_layout
@@ -491,7 +519,7 @@ reference "fig:knn"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -585,6 +613,14 @@ name "fig:knn"
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "knn_estimator.py"
+lstparams "breaklines=true,captionpos=b,frame=tb,language=Python,backgroundcolor={\\color{backcolour}},commentstyle={\\color{codegreen}},keywordstyle={\\color{magenta}},numberstyle={\\tiny\\color{codegray}},stringstyle={\\color{codepurple}},basicstyle={\\ttfamily\\footnotesize},breakatwhitespace=false,breaklines=true,keepspaces=true,numbers=left,numbersep=5pt,showspaces=false,showstringspaces=false,showtabs=false,tabsize=2"
 
 \end_inset
 
