@@ -124,7 +124,7 @@ filename "~/.lyx/templates/math_shorthand.lyx"
 \end_layout
 
 \begin_layout Title
-Homework 3
+Homework 4
 \begin_inset Foot
 status open
 
@@ -147,6 +147,20 @@ literal "true"
 
 \begin_layout Author
 Ziheng Chen (zc5282)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: A new section on random forest method is added; see Sec.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Rf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
@@ -621,6 +635,214 @@ lstparams "breaklines=true,captionpos=b,frame=tb,language=Python,backgroundcolor
 
 \end_layout
 
+\begin_layout Subsection
+Random forest based methods
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Rf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since random forest is also an ensemble method that has a non-parametric
+ nature, we also test the performance.
+ We pick 20% of the training set to build a random forest with 100 trees,
+ where the feature includes the RSSI measurements and a 520-dimensional
+ indicator vector for each row that represents if the measurement is valid
+ or not.
+ The output on the test set is shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rfa"
+
+\end_inset
+
+ and it outperforms the other methods used in this report.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dump/tree_20230426_153600/fig1.pdf
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estimated locations of the validation set.
+ Different colors and markers indicate different estimated buildings and
+ floors.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dump/tree_20230426_153600/fig2.pdf
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error in horizontal coordinates.
+ The error concentrates in the middle building.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dump/tree_20230426_153600/fig3.pdf
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mismatched building estimation, concentrated towards the middle part.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dump/tree_20230426_153600/fig4.pdf
+	width 49line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mismatched floor identification.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Performance of the random forest method on the validation set, loss score=19.176.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rfa"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "rf.py"
+lstparams "breaklines=true,captionpos=b,frame=tb,language=Python,backgroundcolor={\\color{backcolour}},commentstyle={\\color{codegreen}},keywordstyle={\\color{magenta}},numberstyle={\\tiny\\color{codegray}},stringstyle={\\color{codepurple}},basicstyle={\\ttfamily\\footnotesize},breakatwhitespace=false,breaklines=true,keepspaces=true,numbers=left,numbersep=5pt,showspaces=false,showstringspaces=false,showtabs=false,tabsize=2,linerange={23-90}"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Distance based methods
 \end_layout
@@ -872,7 +1094,7 @@ name "fig:fpa-wap"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
